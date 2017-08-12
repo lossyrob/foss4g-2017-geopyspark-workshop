@@ -10,6 +10,7 @@ scratch-notebooks
 .DS_Store
 
 emr/clusters.csv
-emr/config-aws.mk
+
+config-aws.mk
 
 __pycache__
