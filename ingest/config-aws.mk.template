@@ -1,0 +1,4 @@
+export EC2_KEY:=[KEYNAME]
+export AWS_DEFAULT_REGION:=us-east-1
+export S3_URI:=[S3 BUCKET FOR CODE AND CONFIG]
+export SUBNET_ID:=[SUBNET ID]

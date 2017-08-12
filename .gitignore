@@ -1,0 +1,15 @@
+# Emacs
+.ensime
+\#*#
+*~
+.#*
+
+scratch-notebooks
+.ipynb_checkpoints
+
+.DS_Store
+
+emr/clusters.csv
+emr/config-aws.mk
+
+__pycache__
