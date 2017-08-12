@@ -28,11 +28,6 @@ object IngestCDL {
     val as = writer.attributeStore
 
 
-    // for(z <- 0 to 12) {
-    //   val lid = LayerId(layerName, z)
-    //   if(as.layerExists(lid)) { deleter.delete(lid) }
-    // }
-
     val numPartitions =
       if(args.length > 0) {
         args(0).toInt
