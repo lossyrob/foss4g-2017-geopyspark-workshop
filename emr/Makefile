@@ -18,7 +18,6 @@ create-clusters:
 		--worker_instance_type ${WORKER_INSTANCE} \
 		--worker_count ${WORKER_COUNT}
 
-NAMES ?=
 terminate-cluster:
 	python terminate_clusters.py --clusters "${NAMES}"
 
@@ -31,6 +30,8 @@ proxy:
 ssh:
 	python ssh.py --key ${EC2_KEY} --cluster "${NAME}"
 
+download-notebooks:
+	python download-notebooks.py --key ${EC2_KEY} --cluster "${NAME}"
 
 upload-code:
 	@aws s3 cp bootstrap-geopyspark-docker.sh ${S3_URI}/bootstrap-geopyspark-docker.sh

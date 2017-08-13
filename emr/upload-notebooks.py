@@ -95,7 +95,7 @@ if __name__ == "__main__":
                 if part == 'B':
                     if f.startswith('Solution'):
                         put_notebook(os.path.join(root, f), target_dir)
-                if f.endswith('.png'):
+                if f.endswith('.png') or f.endswith('.jpg'):
                     put(os.path.join(root, f), os.path.join(target_dir, f))
 
         run_cmd('sudo chown -R hadoop:hadoop /home/hadoop/notebooks')
