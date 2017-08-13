@@ -44,7 +44,8 @@ if __name__ == "__main__":
 
     targets = [#'exercise2/Reference 2 - Exploring the Landsat Layer.ipynb',
                #'exercise2/Solution 2 - Working with Landsat and NDVI.ipynb',
-               'exercise2/Reference 2 - Exploring the Landsat Layer.ipynb']
+               'exercise3/Reference 3 - Combining Landsat and NLCD.ipynb',
+               'exercise3/Solution 3 - Combining Landsat and CDL.ipynb']
 
     for target in targets:
         get(target)
