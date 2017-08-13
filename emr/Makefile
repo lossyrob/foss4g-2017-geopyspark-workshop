@@ -35,25 +35,16 @@ ssh:
 upload-code:
 	@aws s3 cp bootstrap-geopyspark-docker.sh ${S3_URI}/bootstrap-geopyspark-docker.sh
 
-upload-section1-template:
-	python upload-notebooks.py --key ${EC2_KEY} section1 A
+upload-exercises:
+	python upload-notebooks.py --key ${EC2_KEY} A
 
-upload-section1-solution:
-	python upload-notebooks.py --key ${EC2_KEY} section1 B
+upload-e1-solution:
+	python upload-notebooks.py --key ${EC2_KEY} --exercise exercise1 B
 
-upload-section2-template:
-	python upload-notebooks.py --key ${EC2_KEY} section2 A
+upload-e2-solution:
+	python upload-notebooks.py --key  ${EC2_KEY} --exercise exercise2 B
 
-upload-section2-solution:
-	python upload-notebooks.py --key  ${EC2_KEY} section2 B
+upload-e3-solution:
+	python upload-notebooks.py --key ${EC2_KEY} --exercise exercise3 B
 
-upload-section3-template:
-	python upload-notebooks.py --key ${EC2_KEY} section3 A
-
-upload-section3-solution:
-	python upload-notebooks.py --key ${EC2_KEY} section3 B
-
-upload-section4:
-	python upload-notebooks.py --key ${EC2_KEY} section4 C
-
-upload-notebooks: upload-section1-template upload-section1-solution upload-section2-template upload-section2-solution upload-section3-template upload-section3-solution upload-section4
+upload-notebooks: upload-exercises upload-e1-solution upload-e2-solution upload-e3-solution

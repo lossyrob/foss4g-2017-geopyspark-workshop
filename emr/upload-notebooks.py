@@ -96,7 +96,7 @@ if __name__ == "__main__":
                     if f.startswith('Solution'):
                         put_notebook(os.path.join(root, f), target_dir)
                 if f.endswith('.png'):
-                    put(os.path.join(root, f), target_dir)
+                    put(os.path.join(root, f), os.path.join(target_dir, f))
 
         run_cmd('sudo chown -R hadoop:hadoop /home/hadoop/notebooks')
         run_cmd('sudo chmod -R a+rw /home/hadoop/notebooks')

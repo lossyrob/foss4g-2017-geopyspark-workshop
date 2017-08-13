@@ -24,6 +24,7 @@ if __name__ == "__main__":
     home = expanduser("~")
 
     cmd = ['aws', 'emr', 'ssh',
+           '--region','us-east-1',
            '--cluster-id',cluster_id,
            '--key-pair-file',os.path.join(home, '{}.pem'.format(args.key))]
 
