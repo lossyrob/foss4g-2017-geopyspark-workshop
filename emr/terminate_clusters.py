@@ -22,6 +22,12 @@ if __name__ == "__main__":
     else:
         names = args.clusters.split(',')
 
+    sys.stdout.write("Terminate {} clusters? [y/N] ".format(len(names)))
+    choice = input().lower()
+    if choice != 'y':
+        print("Not gonna do it.")
+        sys.exit(0)
+
     for name in names:
         run_terminate_cluster(name)
         delete_cluster(name)

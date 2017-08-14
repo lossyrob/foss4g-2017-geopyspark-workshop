@@ -55,7 +55,23 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    names = map(lambda state: (state, "FOSS4G Workshop Cluster - %s" % state), list(state_ids)[:args.cluster_count])
+    existing = set(list(get_clusters().keys()))
+
+    available_states = set(state_ids) - existing
+
+    names = list(map(lambda state: (state, "FOSS4G Workshop Cluster - %s" % state), list(state_ids)[:args.cluster_count]))
+
+    num_names = len(names)
+    if num_names < args.cluster_count:
+        print("Not enough states to create {} new clusters, can only create {} more".format(args.cluster_count,
+                                                                                            num_names))
+        sys.exit(1)
+
+    sys.stdout.write("Create {} clusters? [y/N] ".format(num_names))
+    choice = input().lower()
+    if choice != 'y':
+        print("Not gonna do it.")
+        sys.exit(0)
 
     for state, name in names:
         cluster_id = run_create_cluster(name,

@@ -8,7 +8,7 @@ def get_code(name, dns):
             'conf = gps.geopyspark_conf(appName="{}") \\\n'.format(name),
             '          .setMaster("yarn") \\\n',
             '          .set("spark.dynamicAllocation.enabled", "false") \\\n',
-            '          .set("spark.executor.instances", "25") \\\n',
+            '          .set("spark.executor.instances", "33") \\\n',
             '          .set("spark.executor.memory", "4800M") \\\n',
             '          .set("spark.executor.cores", "2") \\\n',
             '          .set("spark.ui.enabled","true") \\\n',
