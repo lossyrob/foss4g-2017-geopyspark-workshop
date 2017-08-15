@@ -9,6 +9,7 @@ scratch-notebooks
 
 .DS_Store
 
+downloaded
 emr/clusters.csv
 
 config-aws.mk

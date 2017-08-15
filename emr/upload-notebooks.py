@@ -23,6 +23,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Upload notebooks to workshop clusters, with modification.')
     parser.add_argument('--key', required=True)
     parser.add_argument('--exercise', default='all', help='One of [exercise1, exercise2, exercise3, exercise4]')
+    parser.add_argument('--clusters', default='all', help='Clusters to upload to.')
     parser.add_argument('part')
 
     args = parser.parse_args()
@@ -31,8 +32,19 @@ if __name__ == "__main__":
     exercise = args.exercise
     part = args.part
 
-    for name, cluster_id in get_clusters().items():
-        cluster_js = json.loads((run(['aws', 'emr', 'describe-cluster',  '--cluster-id', cluster_id])))
+    if args.clusters == 'all':
+        names = list(get_clusters().keys())
+    else:
+        names = args.clusters.split(',')
+
+
+    for name in names:
+#    for name, cluster_id in get_clusters().items():
+        cluster_id = get_clusters()[name]
+#        print(['aws', 'emr', 'describe-cluster',  '--cluster-id', cluster_id])
+        cluster_js = json.loads((run(['aws', 'emr', 'describe-cluster',
+                                      '--region', 'us-east-1',
+                                      '--cluster-id', cluster_id])))
         master_dns = cluster_js['Cluster']['MasterPublicDnsName']
         state_abbv = name[-2:]
         (state, county_name) = state_by_abbv[state_abbv]

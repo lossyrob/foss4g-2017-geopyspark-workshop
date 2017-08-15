@@ -39,6 +39,9 @@ upload-code:
 upload-exercises:
 	python upload-notebooks.py --key ${EC2_KEY} A
 
+upload-single-exercise:
+	python upload-notebooks.py --key ${EC2_KEY} A --exercise exercise${EXERCISE}
+
 upload-e1-solution:
 	python upload-notebooks.py --key ${EC2_KEY} --exercise exercise1 B
 

@@ -42,9 +42,9 @@ if __name__ == "__main__":
         ])
 
 
-    targets = [#'exercise2/Reference 2 - Exploring the Landsat Layer.ipynb',
-               #'exercise2/Solution 2 - Working with Landsat and NDVI.ipynb',
-               #'exercise3/Reference 3 - Combining Landsat and NLCD.ipynb',
+    targets = ['exercise2/Reference 2 - Exploring the Landsat Layer.ipynb',
+               'exercise2/Solution 2 - Working with Landsat and NDVI.ipynb',
+               'exercise3/Reference 3 - Combining Landsat and CDL.ipynb',
                #'exercise3/Solution 3 - Combining Landsat and CDL.ipynb',
                'exercise4/Exercise 4 - Processing a Landsat Scene and Making Art.ipynb']
 
