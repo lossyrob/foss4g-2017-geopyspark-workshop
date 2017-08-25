@@ -39,9 +39,7 @@ if __name__ == "__main__":
 
 
     for name in names:
-#    for name, cluster_id in get_clusters().items():
         cluster_id = get_clusters()[name]
-#        print(['aws', 'emr', 'describe-cluster',  '--cluster-id', cluster_id])
         cluster_js = json.loads((run(['aws', 'emr', 'describe-cluster',
                                       '--region', 'us-east-1',
                                       '--cluster-id', cluster_id])))

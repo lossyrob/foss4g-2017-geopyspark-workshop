@@ -17,7 +17,7 @@ if __name__ == "__main__":
     if len(cluster_ids) < 1:
         raise Exception("No clusters are recorded.")
     if args.cluster:
-        cluster_id = args.cluster
+        cluster_id = get_clusters()[args.cluster]
     else:
         cluster_id = cluster_ids[0]
 
