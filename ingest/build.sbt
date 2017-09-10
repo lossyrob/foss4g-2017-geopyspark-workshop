@@ -14,10 +14,12 @@ scalacOptions ++= Seq(
   "-feature")
 
 libraryDependencies ++= Seq(
-  "org.locationtech.geotrellis" %% "geotrellis-s3" % "1.2.0-ROB-WORKSHOP", // TODO - Replace with milestone
+  "org.locationtech.geotrellis" %% "geotrellis-s3" % "1.2.0-SNAPSHOT",
   "org.apache.spark" %% "spark-core"    % "2.2.0" % "provided",
   "org.apache.hadoop" % "hadoop-client" % "2.8.0" % "provided"
 )
+
+resolvers += "LocationTech GeoTrellis Snapshots" at "https://repo.locationtech.org/content/repositories/geotrellis-snapshots"
 
 // Allows provided dependencies to be included in the run command
 run in Compile := Defaults.runTask(fullClasspath in Compile, mainClass in (Compile, run), runner in (Compile, run)).evaluated
