@@ -13,6 +13,8 @@ scalacOptions ++= Seq(
   "-language:existentials",
   "-feature")
 
+resolvers += "LocationTech GeoTrellis Snapshots" at "https://repo.locationtech.org/content/repositories/geotrellis-snapshots"
+
 libraryDependencies ++= Seq(
   "org.locationtech.geotrellis" %% "geotrellis-s3" % "1.2.0-SNAPSHOT",
   "org.apache.spark" %% "spark-core"    % "2.2.0" % "provided",
